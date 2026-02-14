@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Avito AI Sales Assistant",
+  "version": "1.0.0",
+  "permissions": ["activeTab", "tabs", "storage", "scripting", "alarms"],
+  "host_permissions": [
+    "*://*.avito.ru/*",
+    "*://*.openrouter.ai/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.avito.ru/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
